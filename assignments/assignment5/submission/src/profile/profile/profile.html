@@ -1,0 +1,14 @@
+<div class="container">
+  <div ng-if="profileCtrl.profile.email">
+    <h2>Registration Information</h2>
+    First Name: {{ profileCtrl.profile.firstname }} <br>
+    Last Name: {{ profileCtrl.profile.lastname }} <br>
+    Email: {{ profileCtrl.profile.email }} <br>
+    Phone Number: {{ profileCtrl.profile.phoneNumber }} <br>
+    Favorite Item: {{ profileCtrl.profile.favoriteItem }} - {{ profileCtrl.itemInfo.name }}<br>
+    <img ng-src="{{ profileCtrl.itemURL }}">
+  </div>
+  <span ng-if="!profileCtrl.profile.email">
+    Not Signed Up Yet. <a ui-sref="public.register">Sign up Now!</a>
+  </span>
+</div>

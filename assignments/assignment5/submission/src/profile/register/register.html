@@ -1,0 +1,65 @@
+
+<form name='regForm' novalidate class="container">
+
+  <h2>Sign up for our newsletter</h2>
+
+
+  <input type="text" name="firstname" placeholder="First name"
+    ng-model="registerCtrl.firstname" class="register reg-field"
+    required>
+    <span
+      ng-if="regForm.firstname.$error.required && regForm.firstname.$touched"
+      class="error">
+      First name is required
+    </span>
+    <br>
+
+    <input type="text" name="lastname" placeholder="Last name"
+      ng-model="registerCtrl.lastname" class="register reg-field"
+      required>
+      <span
+        ng-if="regForm.lastname.$error.required && regForm.lastname.$touched"
+        class="error">
+        Last name is required
+      </span>
+      <br>
+
+  <input type="email" name="email" placeholder="Email"
+  ng-model="registerCtrl.email" class="register reg-field"
+  required>
+  <span ng-if="regForm.email.$invalid && regForm.email.$touched" class="error">
+    Must be a valid email address: handle@domain format
+  </span>
+  <br>
+
+  <input type="text" name="phone" placeholder="Phone ###-###-####"
+    ng-model="registerCtrl.phone" class="register reg-field"
+    pattern="(\d{3})-(\d{3})-(\d{4})">
+    <span ng-if="regForm.phone.$invalid && regForm.phone.$touched" class="error">
+      Phone must be in the format ###-###-####.
+    </span>
+    <br>
+
+    <input type="text" name="favoriteItem" placeholder="Favorite Item (short name)"
+      ng-model="registerCtrl.favoriteItem" class="register reg-field"
+      required>
+      <span ng-if="regForm.favoriteItem.$invalid && regForm.favoriteItem.$touched" class="error">
+        Favorite Item must be selected.
+      </span>
+      <span ng-if="registerCtrl.notFound" class="error">
+        No such menu number exists.
+      </span>
+      <br>
+
+  <button
+    ng-disabled="regForm.$invalid"
+    ng-click="registerCtrl.submit()"
+    class="register">Submit</button>
+
+    <br>
+
+    <span ng-if="registerCtrl.submitted">
+      Your information has been saved
+    </span>
+
+</form>
