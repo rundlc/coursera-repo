@@ -5,7 +5,7 @@
     Last Name: {{ profileCtrl.profile.lastname }} <br>
     Email: {{ profileCtrl.profile.email }} <br>
     Phone Number: {{ profileCtrl.profile.phoneNumber }} <br>
-    Favorite Item: {{ profileCtrl.profile.favoriteItem }} - {{ profileCtrl.itemInfo.name }}<br>
+    Favorite Item: {{ profileCtrl.profile.favoriteItem }} - {{ profileCtrl.itemInfo.name }} - {{ profileCtrl.itemInfo.description }}<br>
     <img ng-src="{{ profileCtrl.itemURL }}">
   </div>
   <span ng-if="!profileCtrl.profile.email">
